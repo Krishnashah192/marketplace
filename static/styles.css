@@ -1,0 +1,45 @@
+:root {
+  --bg: #0d1117; --panel: #161b27; --border: #2a3245;
+  --text: #e6e9f0; --muted: #8b93a7; --accent: #7c6cff; --good: #3ecf8e;
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, sans-serif; }
+header { padding: 32px 24px 16px; text-align: center; }
+header h1 { font-size: 2rem; background: linear-gradient(90deg, var(--accent), #4dd0e1);
+  -webkit-background-clip: text; background-clip: text; color: transparent; }
+header p { color: var(--muted); margin: 6px 0 18px; }
+.toolbar { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+input, select, textarea, button {
+  background: var(--panel); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 9px 12px; font: inherit;
+}
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); }
+button.primary { background: var(--accent); border: 0; cursor: pointer; font-weight: 600; }
+button.primary:hover { filter: brightness(1.15); }
+
+#grid { display: grid; gap: 16px; padding: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); max-width: 1200px; margin: auto; }
+.card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+  padding: 18px; cursor: pointer; transition: transform .12s, border-color .12s; }
+.card:hover { transform: translateY(-2px); border-color: var(--accent); }
+.card h3 { display: flex; justify-content: space-between; align-items: center; }
+.card .vendor { color: var(--muted); font-size: .85rem; }
+.card p { color: var(--muted); margin: 8px 0; font-size: .9rem; }
+.badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+.badge { font-size: .75rem; padding: 3px 9px; border-radius: 999px;
+  background: #222a3d; border: 1px solid var(--border); }
+.badge.karma { color: var(--good); border-color: var(--good); }
+.badge.green-A, .badge.green-B { color: var(--good); }
+.badge.green-D, .badge.green-E { color: #ff7b72; }
+
+dialog { background: var(--panel); color: var(--text); border: 1px solid var(--border);
+  border-radius: 14px; max-width: 560px; width: 92%; padding: 24px; }
+dialog::backdrop { background: rgba(0,0,0,.6); }
+dialog .close { position: absolute; top: 12px; right: 12px; cursor: pointer; }
+dialog h2 { margin-bottom: 4px; }
+dialog section { margin-top: 18px; }
+dialog section h4 { color: var(--accent); margin-bottom: 8px; }
+.lineage { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; color: var(--muted); }
+.row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.result { margin-top: 10px; padding: 10px; border-radius: 8px; background: #10151f;
+  border: 1px dashed var(--border); font-size: .85rem; white-space: pre-wrap; }
